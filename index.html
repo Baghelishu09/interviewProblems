@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper character encoding, browser compatibility, and responsiveness -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Leetcode Cloner</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Importing Poppins Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Main Container Box -->
+    <div class="box">
+        <!-- Page Header -->
+        <h1>LEETCODE CLONER</h1>
+
+        <!-- Input Section: Username + Search Button -->
+        <div class="inputs">
+            <!-- Label for Username Field -->
+            <label for="username" id="uname">Enter username</label>
+
+            <!-- Username Input Field -->
+            <input type="text" name="name" id="name">
+
+            <!-- Search Button -->
+            <button id="submit">Search</button>
+        </div>
+
+        <!-- Results Section: Displays all fetched LeetCode data -->
+        <div class="result">
+            <!-- Easy Problem Count -->
+            <div class="item">
+                <p>Easy<sup>*</sup>:</p>
+                <div class="values" id="easy"></div>
+            </div>
+
+            <!-- User's Real Name -->
+            <div class="item">
+                <p>Name:</p>
+                <div class="values" id="fname"></div> 
+            </div>
+
+            <!-- Medium Problem Count -->
+            <div class="item">
+                <p>Medium<sup>*</sup>:</p>
+                <div class="values" id="medium"></div>
+            </div>
+
+            <!-- Total Submissions -->
+            <div class="item">
+                <p>Submission:</p>
+                <div class="values" id="submission"></div> 
+            </div>
+
+            <!-- Hard Problem Count -->
+            <div class="item">
+                <p>Hard<sup>*</sup>:</p>
+                <div class="values" id="hard"></div>
+            </div> 
+
+            <!-- User's Global Ranking -->
+            <div class="item">
+                <p>Global Ranking:</p>
+                <div class="values" id="ranking"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linking External JavaScript File -->
+    <script src="/main.js"></script>
+</body>
+</html>

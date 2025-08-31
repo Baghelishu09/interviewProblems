@@ -1,0 +1,195 @@
+/* =========================
+   Global Reset & Base Styles
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+
+/* =========================
+   Main Container
+   ========================= */
+.box {
+    position: relative;
+    width: 50%;
+    max-width: 800px;
+    min-width: 320px;
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+/* Smooth entrance animation */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f3c88;
+    letter-spacing: 1px;
+    animation: textFade 1s ease-out forwards;
+}
+
+/* Subtle text fade animation */
+@keyframes textFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Input Section
+   ========================= */
+.inputs {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#uname {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f3c88;
+}
+
+#name {
+    width: 60%;
+    max-width: 250px;
+    height: 2.2rem;
+    padding: 0.3rem 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+#name:focus {
+    border-color: #1f3c88;
+    box-shadow: 0 0 8px rgba(31, 60, 136, 0.3);
+    background-color: #ffffff;
+    transform: scale(1.02);
+}
+
+/* =========================
+   Button Styling
+   ========================= */
+#submit {
+    min-width: 7rem;
+    height: 2.4rem;
+    background: linear-gradient(135deg, #1f3c88, #3a8ef6);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(58, 142, 246, 0.4);
+}
+
+#submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(58, 142, 246, 0.6);
+    background: linear-gradient(135deg, #3a8ef6, #1f3c88);
+}
+
+/* =========================
+   Result Section
+   ========================= */
+.result {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.values {
+    flex: 1;
+    height: 2rem;
+    border: 2px solid #1f3c88;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef4ff;
+    font-weight: 500;
+    color: #1f3c88;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media screen and (max-width: 768px) {
+    .box {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #name {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .inputs {
+        flex-direction: column;
+    }
+
+    .result {
+        grid-template-columns: 1fr;
+    }
+
+    .item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
